@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700');
+
+:root {
+    --color-main-1: #582C83;
+    --color-main-2: #0057B7;
+    --color-main-3: #91df00;
+    --color-main-4: #FE5000;
+    --color-main-5: #fff200;
+    --color-aux-1: #666666;
+    --color-aux-2: #FFFFFF;
+    --color-aux-3: #211E16;
+    --color-aux-4: #919191;
+    --color-tra-1: #ffffff98;
+}
+
+body {
+    overflow-y: scroll;
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.section {
+    height: 100vh;
+    width: 100vw;
+}
+
+.section-auto {
+    width: 100vw;
+}
+
+.landing {
+    width: 100%;
+    height: 100%;
+}
+
+.landing .title {
+    background: white;
+    padding: 60px;
+    margin: 0 auto;
+    text-align: center;
+    /* height: 20%; */
+}
+
+.landing h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-main-1);
+    padding: 0;
+    margin: 0;
+}
+
+.landing h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 70px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+    z-index: 10;
+    opacity: .9;
+}
+
+.landing h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    line-height: 0;
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--color-aux-1);
+}
+
+.parallax-one {
+    background-image: url('../assents/img/DJI_0020.JPG');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.content-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.transparent-box {
+    background-color: var(--color-tra-1);
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.transparent-box > img {
+    width: 50%;
+}
+
+.title-section {
+    background: white;
+    padding: 60px;
+    margin: 0 auto;
+    text-align: center;
+    /* height: 20%; */
+}
+
+
+.title-section > h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-main-1);
+    padding: 0;
+    margin: 0;
+}
+
+.title-section> h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 70px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+    z-index: 10;
+    opacity: .9;
+}
+
+.title-section> h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    line-height: 0;
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--color-aux-1);
+}
+
+/*--------------- footer effect -----------*/
+
+.header {
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    text-align: center;
+    background-color: var(--color-main-1);
+    color: white;
+}
+
+.logo {
+    width: 50px;
+    fill: white;
+    padding-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.inner-header {
+    height: 30vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.content {
+    position: relative;
+    height: 20vh;
+    text-align: center;
+    background-color: white;
+}
+
+/* animacion */
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* categories section*/
+.category-section {
+    display: flow-root;
+    padding-bottom: 3vh;
+}
+.category-main {
+    width: 95%;
+    height: 35vh;
+    background-color: var(--color-aux-4);
+    margin-left: 2.5%;
+    margin-top: 2%;
+    border-radius: 10px;
+    box-shadow: 0px 3px 9px 2px #6a6a6a;
+}
+
+.category-sec {
+    float: left;
+    width: 46%;
+    height: 35vh;
+    margin-left: 2.5%;
+    margin-top: 2%;
+    border-radius: 10px;
+    box-shadow: 0px 3px 9px 2px #6a6a6a;
+}
+
+.sec-1 {
+    background-color: var(--color-main-2);
+}
+
+.sec-2 {
+    background-color: var(--color-main-3);
+}
+
+.sec-3 {
+    background-color: var(--color-main-4);
+}
+
+.sec-4 {
+    background-color: var(--color-main-5);
+}
+
+.container-secondary {
+    width: 100%;
+    height: 50vh;
+    /* background-color: var(--color-aux-1); */
+}

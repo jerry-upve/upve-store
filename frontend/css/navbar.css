@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700');
+
+:root {
+    --color-main-1: #582C83;
+    --color-main-2: #0057B7;
+    --color-main-3: #91df00;
+    --color-main-4: #FE5000;
+    --color-main-5: #fff200;
+    --color-aux-1: #666666;
+    --color-aux-2: #FFFFFF;
+    --color-aux-3: #211E16;
+    --color-aux-4: #919191;
+    --color-tra-1: #ffffff98;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-main-1);
+    box-shadow: 0px 2px 4px 0px #2a2a2a;
+    z-index: 2;
+}
