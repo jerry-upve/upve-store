@@ -11,6 +11,7 @@
     --color-aux-3: #211E16;
     --color-aux-4: #919191;
     --color-tra-1: #ffffff98;
+    --nav-color-hover : #68359b;
 }
 
 .navbar {
@@ -21,4 +22,65 @@
     background-color: var(--color-main-1);
     box-shadow: 0px 2px 4px 0px #2a2a2a;
     z-index: 2;
+    font-family: 'Oswald', sans-serif;
+}
+
+.nav-logo {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    float: left;
+}
+
+.nav-logo > img {
+    height: 55%;
+    margin-left: 30px;
+}
+
+.nav-section {
+    display: flex;
+    width: 60%;
+    height: 100%;
+    float: left;
+    justify-content: center;
+}
+
+.nav-section > a {
+    color: var(--color-aux-2);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration-line: none;
+}
+
+.nav-section > a:hover {
+    background-color: var(--nav-color-hover );
+    box-shadow: 0 0 4px 0px rgb(79, 79, 79);
+}
+
+.nav-user {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+.nav-user-btn {
+    margin-right: 15px;
+    color: var(--color-aux-2);
+    border: 2px solid var(--color-aux-2);
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.nav-user-btn:hover {
+    color: var(--color-main-1);
+    background-color: var(--color-aux-2);
+    border: 2px solid var(--color-aux-2);
 }
