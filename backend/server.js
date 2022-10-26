@@ -16,14 +16,19 @@ app.use(express.json());
 //-----------------------------------------------------------------
 //------------------------- Rutas ---------------------------------
 //Ruta index
-app.get('/', (req, res) => {
-    res.json({ user: 'jerry' });
-    users.usersDB();
+app.get('/usuarios', (req, res) => {
+    users.obtenerUsuarios((data) => {
+        if(data.success){
+            res.json({ "users": data.rows });
+        }else{
+            res.json({ "errors": data.error });
+        }
+    });
 });
 
 //Ruta login
 app.post('/login', (req, res) => {
-    res.json({ logged: true })
+    res.json({ "logged": true })
 });
 
 //Creacion del escuchador de peticiones

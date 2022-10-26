@@ -6,15 +6,23 @@ var connection = mysql.createConnection({
     password: ''
 });
 
-function usersDB() {
+function obtenerUsuarios(callback) {
     connection.connect();
-
-    connection.query('SELECT * FROM `users`', function (err, rows, fields) {
-        if (err) throw err;
-        console.log(rows);
+    connection.query('SELECT * FROM `users`', function (err, rows) {
+        if (err){
+            callback({
+                'success': false,
+                'error': err.sqlMessage
+            });
+        }else{
+            callback({
+                'success': true,
+                'rows': rows
+            });
+        }
     });
 
     connection.end();
 }
 
-exports.usersDB = usersDB;
+exports.obtenerUsuarios = obtenerUsuarios;
