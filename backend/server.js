@@ -17,18 +17,44 @@ app.use(express.json());
 //------------------------- Rutas ---------------------------------
 //Ruta index
 app.get('/usuarios', (req, res) => {
-    users.obtenerUsuarios((data) => {
-        if(data.success){
-            res.json({ "users": data.rows });
+    users.obtenerUsuarios((resp) => {
+        if (resp.success){
+            res.json({ 
+                "success": true, 
+                "users": resp.data 
+            });
         }else{
-            res.json({ "errors": data.error });
+            res.json({ 
+                "success": true, 
+                "errors": resp.error 
+            });
         }
     });
 });
 
+app.get('/usuarios/:id', (req, res) => {
+    users.obtenerUsuario(req.params.id, (resp) => {
+        if (resp.success) {
+            res.json({
+                "success": true,
+                "user": resp.data[0]
+            });
+        } else {
+            res.json({
+                "success": true,
+                "errors": resp.error
+            });
+        }
+    });
+});
+
+
 //Ruta login
 app.post('/login', (req, res) => {
-    res.json({ "logged": true })
+    res.json({
+        "success": true,
+        "logged": true
+    });
 });
 
 //Creacion del escuchador de peticiones

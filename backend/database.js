@@ -1,28 +1,51 @@
 var mysql = require('mysql');
-var connection = mysql.createConnection({
+var poolDatabase = mysql.createPool({
+    connectionLimit: 20,
     host: 'localhost',
     database: "test",
     user: 'root',
     password: ''
 });
 
-function obtenerUsuarios(callback) {
-    connection.connect();
-    connection.query('SELECT * FROM `users`', function (err, rows) {
-        if (err){
-            callback({
-                'success': false,
-                'error': err.sqlMessage
-            });
-        }else{
-            callback({
-                'success': true,
-                'rows': rows
-            });
-        }
+const obtenerUsuario = (id, callback) => {
+    poolDatabase.getConnection((error, connection) => {
+        connection.query(`SELECT * FROM users WHERE id = ${id}`, (error, data) => {
+            if (error) {
+                callback({
+                    'success': false,
+                    'error': error.sqlMessage
+                });
+            } else {
+                callback({
+                    'success': true,
+                    'data': data
+                });
+            }
+        });
+        
+        connection.release();
     });
+}
 
-    connection.end();
+const obtenerUsuarios = (callback) => {
+    poolDatabase.getConnection((error, connection) => {
+        connection.query('SELECT * FROM `users`', (error, data) => {
+            if (error) {
+                callback({
+                    'success': false,
+                    'error': error.sqlMessage
+                });
+            } else {
+                callback({
+                    'success': true,
+                    'data': data
+                });
+            }
+        });
+
+        connection.release();
+    });
 }
 
 exports.obtenerUsuarios = obtenerUsuarios;
+exports.obtenerUsuario = obtenerUsuario;
