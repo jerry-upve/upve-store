@@ -12,10 +12,12 @@ const port = 3000;
 //configuraciones de la aplicacion
 app.use(cors());
 app.use(express.json());
+app.use('/', express.static('public'));
 
 //-----------------------------------------------------------------
 //------------------------- Rutas ---------------------------------
-//Ruta index
+
+//ruta get usuarios
 app.get('/usuarios', (req, res) => {
     users.obtenerUsuarios((resp) => {
         if (resp.success){
@@ -48,12 +50,20 @@ app.get('/usuarios/:id', (req, res) => {
     });
 });
 
-
 //Ruta login
 app.post('/login', (req, res) => {
-    res.json({
-        "success": true,
-        "logged": true
+    users.login(req.body, (respuesta) => {
+        if (respuesta.success) {
+            res.json({
+                "success": true,
+                "data": respuesta.data
+            });
+        } else {
+            res.json({
+                "success": false,
+                "errors": respuesta.error
+            });
+        }
     });
 });
 

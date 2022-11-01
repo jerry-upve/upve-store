@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <title>Iniciar sesión</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="max-width: 22rem;">
+            <div class="card-body"><img id="profile-img" class="profile-img-card"
+                    src="../../assents/logos/UPVE_IdREs_@3x.png" alt="logo">
+                <div class="justify-content-center text-center">
+                    <h5>UPVE STORE</h5>
+                </div>
+                <div class="divider"></div>
+                <div class="input-container">
+                    <input type="text" placeholder="Usuario" class="input-login" id="usr_input">
+                    <input type="password" placeholder="Contraseña" class="input-login" id="key_input">
+                    <span onclick="passwordView(this)">
+                        Mostar Contraseña
+                    </span>
+                </div>
+                <div class="divider"></div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary" id="btn-login" type="button" role="button">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/login.js"></script>
+</body>
+</html>
