@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require("cors");
 
 //importacion de modulos
-const users = require('./database');
+const users = require('./database/usuarios');
 
 //Objetos de librerias y constatentes globales
 const app = express();

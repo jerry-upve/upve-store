@@ -41,6 +41,7 @@ body {
 .card-body {
     flex: 1 1 auto;
     padding: 1rem;
+    margin-bottom: 20px;
 }
 
 .profile-img-card {
@@ -70,6 +71,8 @@ h5 {
     margin-top: 14px;
     margin-bottom: 30px;
     border-top: 1px solid #d6d6d6;
+    text-align: center;
+    color: var(--color-main-4);
 }
 
 .gap-2 {
@@ -133,4 +136,15 @@ h5 {
 
 .input-container > span:hover {
     color: var(--color-main-1);
+}
+
+.card > a {
+    margin-top: 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--color-aux-4);
+}
+
+.card > a:hover {
+    color: var(--color-aux-1);
 }

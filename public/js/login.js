@@ -27,9 +27,19 @@ document.getElementById('btn-login').addEventListener('click', () => {
     .then((resp) => {
         if (resp.success){
             sessionStorage.setItem('logged', true);
+            document.querySelector('.divider').innerText = '';
+            window.location.replace('../main.html');
         }else{
             sessionStorage.setItem('logged', false);
-            console.log(resp.errors);
+            document.querySelector('.divider').innerText = resp.errors;
         }
     });
 });
+
+const logged = sessionStorage.getItem('logged');
+
+if (logged !== undefined && logged) {
+    if (logged === 'true') {
+        window.location.replace('../main.html');
+    }
+}

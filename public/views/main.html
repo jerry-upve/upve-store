@@ -36,7 +36,19 @@
                 <a href="./public/paquetes.html">Paquetes</a>
             </nav>
             <div class="nav-user">
-                <div class="nav-user-btn">Iniciar sesion</div>
+                <div class="nav-user-btn" onclick="window.location.replace('./public/login.html')">Iniciar sesion</div>
+                <div class="dropdown" id="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Usuarios</a>
+                        <a href="#">Productos</a>
+                        <div class="divider"></div>
+                        <span onclick="logout()">Logout</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="category-section">
@@ -106,6 +118,7 @@
             </div>
             <p>&copy; 2020-2024, Universidad Politécnica del Valle del Évora</p>
         </footer>
+        <script src="../js/navbar.js"></script>
         <script src="../js/main.js"></script>
     </body>
 </html>
