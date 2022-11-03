@@ -27,7 +27,7 @@ app.get('/usuarios', (req, res) => {
             });
         }else{
             res.json({ 
-                "success": true, 
+                "success": false, 
                 "errors": resp.error 
             });
         }
@@ -43,7 +43,7 @@ app.get('/usuarios/:id', (req, res) => {
             });
         } else {
             res.json({
-                "success": true,
+                "success": false,
                 "errors": resp.error
             });
         }

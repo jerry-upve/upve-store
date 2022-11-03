@@ -10,7 +10,7 @@ const poolDatabase = mysql.createPool({
 
 const obtenerUsuario = (id, callback) => {
     poolDatabase.getConnection((error, connection) => {
-        connection.query(`SELECT * FROM users WHERE id = ${id}`, (error, data) => {
+        connection.query(`SELECT nombre, email, phone, status FROM users WHERE id = ${id}`, (error, data) => {
             if (error) {
                 callback({
                     'success': false,
@@ -30,7 +30,7 @@ const obtenerUsuario = (id, callback) => {
 
 const obtenerUsuarios = (callback) => {
     poolDatabase.getConnection((error, connection) => {
-        connection.query('SELECT * FROM `users`', (error, data) => {
+        connection.query('SELECT nombre, email, phone, status FROM `users`', (error, data) => {
             if (error) {
                 callback({
                     'success': false,
@@ -100,24 +100,6 @@ const login = (data, callback) => {
             })
         }
     })
-    // callback(data.pass);
-    // poolDatabase.getConnection((error, connection) => {
-    //     connection.query('SELECT * FROM `users`', (error, data) => {
-    //         if (error) {
-                // callback({
-                //     'success': false,
-                //     'error': error.sqlMessage
-                // });
-    //         } else {
-    //             callback({
-    //                 'success': true,
-    //                 'data': data
-    //             });
-    //         }
-    //     });
-
-    //     connection.release();
-    // });
 }
 
 exports.obtenerUsuarios = obtenerUsuarios;

@@ -41,7 +41,6 @@
                 <h1>Usuarios</h1>
             </div>
         </div>
-        <!-- main -->
         <!-- modal agregar -->
         <div id="modalAgregarId" class="modal">
             <span onclick="modalCerrar('modalAgregarId')" class="close" title="Close Modal">×</span>
@@ -54,8 +53,25 @@
             </div>
         </div>
         <!-- modal agregar -->
+        <!-- main -->
         <div class="content-users">
-            <div class="table-section"></div>
+            <div class="table-section">
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Tipo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-user-id">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="table-section-footer">
                 <button class="btn-outline" id="btn-agregar" onclick="modalAbrir('modalAgregarId')">Iniciar Sesión</button>
             </div>
