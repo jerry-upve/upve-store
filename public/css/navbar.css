@@ -11,6 +11,7 @@
     --color-aux-3: #211E16;
     --color-aux-4: #919191;
     --color-tra-1: #ffffff98;
+    --color-tra-2: #dbdbdb;
     --nav-color-hover : #68359b;
 }
 
@@ -146,6 +147,11 @@
 .dropdown-content span:hover {
     background-color: var(--color-main-1);
     color: var(--color-aux-2);
+}
+
+.actived {
+    background-color: var(--nav-color-hover);
+    color: var(--color-tra-2);
 }
 
 .dropdown:hover .dropdown-content {
